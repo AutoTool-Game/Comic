@@ -1,0 +1,86 @@
+.toggle-menu {
+  width: 66%;
+  background-color: #1C1C1E;
+}
+
+.toggle-menu > a {
+  width: 50%;
+  color: #828282;
+}
+
+.toggle-menu-active {
+  background: linear-gradient(286.17deg, #FF9F0A 0%, #FFCD22 100%);
+  color: #1C1C1E !important;
+}
+
+.slide-box {
+  position: relative;
+}
+
+.slick-dot-home {
+  z-index: 10;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  margin: auto;
+  display: block;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.slick-dot-home li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dot-home li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.slick-dot-home li.slick-active button:before {
+  color: #FFB340;
+}
+
+.slick-dot-home li button:before {
+  font-family: 'slick';
+  font-size: 8px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#header-bg.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 361px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  filter: blur(8px);
+  z-index: -1;
+}
