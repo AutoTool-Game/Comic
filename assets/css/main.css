@@ -84,3 +84,63 @@
   filter: blur(8px);
   z-index: -1;
 }
+
+.header-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 30;
+}
+
+.filter-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 61;
+}
+
+.mobile-menu {
+  width: 300px;
+  padding: 0;
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 500;
+  overflow: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  background-color: #1C1C1E;
+  -webkit-transition: transform .15s ease;
+  -webkit-transition: -webkit-transform .15s ease;
+  transition: -webkit-transform .15s ease;
+  transition: transform .15s ease;
+  transition: transform .15s ease, -webkit-transform .15s ease;
+  transform: translate3d(-320px, 0, 0);
+  -webkit-transform: translate3d(-320px, 0, 0);
+}
+
+.show-mobile-menu .mobile-menu,
+.show-filter-menu .filter-menu {
+  transform: none;
+  -webkit-transform: none;
+}
+
+.btn-login {
+  background: linear-gradient(286.17deg, #FF9F0A 0%, #FFCD22 100%);
+  padding: 7px 20px;
+  border-radius: 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #1C1C1E;
+  text-decoration: none;
+}

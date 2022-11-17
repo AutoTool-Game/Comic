@@ -1,6 +1,7 @@
 <template>
   <div class="fixed-header">
-    <div id="header-bg" class="header-bg w-full"></div>
+    <mobile-menu />
+    <div id="header-bg" class="header-bg w-full" :style="headerBg"></div>
     <div class="header py-2 px-3">
       <div class="header-top flex justify-between mb-3">
         <div class="header-top-left w-1/4">
@@ -46,12 +47,16 @@
         </div>
       </div>
       <div class="slide-box">
-        <vue-slick-carousel v-bind="settings" @init="onInitSetting" data="2">
-          <img src="~/assets/images/banners/banner-default.jpg" alt="" class="rounded-lg px-1">
-          <img src="~/assets/images/banners/banner-default-1.jpg" alt="" class="rounded-lg px-1">
-          <img src="~/assets/images/banners/banner-default-2.jpg" alt="" class="rounded-lg px-1">
-          <img src="~/assets/images/banners/banner-default-3.jpg" alt="" class="rounded-lg px-1">
-          <img src="~/assets/images/banners/banner-default-4.jpg" alt="" class="rounded-lg px-1">
+        <vue-slick-carousel
+          v-bind="settings"
+          @afterChange="swipeSlick"
+        >
+          <img
+            v-for="(item, index) in listSlick"
+            :key="index"
+            :src="item"
+            class="rounded-xl px-1"
+          >
         </vue-slick-carousel>
       </div>
     </div>
@@ -62,6 +67,7 @@
 
 import VueSlickCarousel from 'vue-slick-carousel';
 import SvgIcon from '~/components/common/items/SvgIcon';
+import MobileMenu from '~/components/mobile/layouts/MobileMenu';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 // optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
@@ -70,7 +76,8 @@ export default {
   name: "HeaderHome",
   components: {
     SvgIcon,
-    VueSlickCarousel
+    VueSlickCarousel,
+    MobileMenu
   },
   data() {
     return {
@@ -80,12 +87,23 @@ export default {
         dotsClass: 'slick-dot-home',
         autoplay: true,
         slidesToShow: 1,
+        speed: 1000
       },
+      listSlick: [
+        `${process.env.BASE_URL}/banners/banner-default-1.jpg`,
+        `${process.env.BASE_URL}/banners/banner-default-2.jpg`,
+        `${process.env.BASE_URL}/banners/banner-default-3.jpg`,
+        `${process.env.BASE_URL}/banners/banner-default-4.jpg`,
+      ],
+      headerBg: '',
     }
   },
+  mounted () {
+    this.headerBg = 'background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%), url("' + this.listSlick[0] + '");';
+  },
   methods: {
-    onInitSetting() {
-      console.log(this);
+    swipeSlick(slider) {
+      this.headerBg = 'background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%), url("' + this.listSlick[slider] + '");';
     }
   },
 }
