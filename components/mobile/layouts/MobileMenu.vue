@@ -80,7 +80,8 @@ export default {
           'Đăng xuất',
           '',
         ],
-      ]
+      ],
+      showMenu: false,
     }
   }
 }

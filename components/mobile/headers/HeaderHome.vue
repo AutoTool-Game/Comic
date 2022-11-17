@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed-header">
+  <div id="fixed-header-home" class="fixed-header">
     <mobile-menu />
     <div id="header-bg" class="header-bg w-full" :style="headerBg"></div>
     <div class="header py-2 px-3">
@@ -27,6 +27,7 @@
           <svg-icon
             name="icon-bars"
             class="w-[24px] mx-2"
+            @click="showMainMenuLeft"
           />
         </div>
       </div>
@@ -55,7 +56,7 @@
             v-for="(item, index) in listSlick"
             :key="index"
             :src="item"
-            class="rounded-xl px-1"
+            class="rounded-xl"
           >
         </vue-slick-carousel>
       </div>
@@ -69,7 +70,6 @@ import VueSlickCarousel from 'vue-slick-carousel';
 import SvgIcon from '~/components/common/items/SvgIcon';
 import MobileMenu from '~/components/mobile/layouts/MobileMenu';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
-// optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 
 export default {
@@ -84,9 +84,12 @@ export default {
       settings: {
         arrows: false,
         dots: true,
+        fade: true,
+        lazyLoad: 'ondemand',
         dotsClass: 'slick-dot-home',
         autoplay: true,
         slidesToShow: 1,
+        centerPadding: '10px',
         speed: 1000
       },
       listSlick: [
@@ -104,7 +107,8 @@ export default {
   methods: {
     swipeSlick(slider) {
       this.headerBg = 'background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%), url("' + this.listSlick[slider] + '");';
-    }
+    },
+    showMainMenuLeft() {}
   },
 }
 </script>
