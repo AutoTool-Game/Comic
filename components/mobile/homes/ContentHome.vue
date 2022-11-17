@@ -2,37 +2,17 @@
   <div class="main">
     <div class="flex justify-between px-3 mt-4">
       <nuxt-link
-        to=""
+        v-for="(item, index) in listMenuHome"
+        :key="index"
+        :to="item.to"
       >
         <div class="w-full">
           <svg-icon
-            name="icon-category"
+            :name="item.thumb_name"
             class="w-[69px]"
           />
         </div>
-        <div class="w-full text-white text-center text-xs font-normal">Danh mục</div>
-      </nuxt-link>
-      <nuxt-link
-        to=""
-      >
-        <div class="w-full">
-          <svg-icon
-            name="icon-chart"
-            class="w-[69px]"
-          />
-        </div>
-        <div class="w-full text-white text-center text-xs font-normal">Bảng xếp hạng</div>
-      </nuxt-link>
-      <nuxt-link
-        to=""
-      >
-        <div class="w-full">
-          <svg-icon
-            name="icon-is-suggested"
-            class="w-[69px]"
-          />
-        </div>
-        <div class="w-full text-white text-center text-xs font-normal">Được đề cử</div>
+        <div class="w-full text-white text-center text-xs font-normal" v-text="item.title"></div>
       </nuxt-link>
     </div>
     <div class="content-main">
@@ -94,6 +74,23 @@ export default {
         infinite: false,
         centerPadding: '20px',
       },
+      listMenuHome: [
+        {
+          title: 'Danh mục',
+          thumb_name: 'icon-category',
+          to: ''
+        },
+        {
+          title: 'Bảng xếp hạng',
+          thumb_name: 'icon-chart',
+          to: ''
+        },
+        {
+          title: 'Được đề cử',
+          thumb_name: 'icon-is-suggested',
+          to: ''
+        },
+      ],
       listBlockHome: [
         {
           title: 'Mới nhất',
