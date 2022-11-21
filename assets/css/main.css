@@ -158,3 +158,40 @@ body {
   background-color: #1C1C1E;
   border-radius: 15px;
 }
+
+.header-category {
+  height: 101px;
+  background-image: url(/banners/bg-banner-category.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
+
+.tabs-link {
+  text-decoration: none;
+  color: rgba(241, 241, 241, 0.3);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tab-active.tab-link {
+  color: rgba(241, 241, 241, 1);
+}
+
+.tabs-link {
+  text-decoration: none;
+  color: rgba(241, 241, 241, 0.3);
+  font-size: 14px;
+  font-weight: 500;
+}
+
