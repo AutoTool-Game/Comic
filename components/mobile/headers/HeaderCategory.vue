@@ -45,14 +45,13 @@
             >
               <div
                 class="tab-box tab-link w-full relative"
-                :class="idActive === item.id ? 'tab-active' : ''"
               >
                 {{ item.name }}
                 <div
                   class="absolute w-full mt-2"
                 >
                   <svg-icon
-                    v-if="idActive === item.id"
+                    v-if="item.id == idActive"
                     name="icon-category-active"
                     class="mx-auto"
                   />
@@ -69,9 +68,6 @@
 <script>
 import SvgIcon from '~/components/common/items/SvgIcon';
 
-// import 'vue-slick-carousel/dist/vue-slick-carousel.css';
-// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
-
 export default {
   name: "HeaderCategory",
   components: {
@@ -79,8 +75,14 @@ export default {
   },
   data() {
     return {
-      idActive: 0,
       listCate: [
+        {
+          id: 1,
+          name: 'Tất cả',
+          parent_id: 0,
+          slug: 'thieu-nhi',
+          for_kid: 1
+        },
         {
           id: 42,
           name: 'Song ngữ',
@@ -134,6 +136,11 @@ export default {
       virtualData: {
         slides: [],
       },
+    }
+  },
+  computed: {
+    idActive () {
+      return this.$route.path.substring(this.$route.path.lastIndexOf('/') + 1);
     }
   },
   mounted() {

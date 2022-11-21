@@ -15,7 +15,7 @@
         <div class="w-full text-white text-center text-xs font-normal" v-text="item.title"></div>
       </nuxt-link>
     </div>
-    <div class="content-main">
+    <div class="content-main my-4">
       <div
         v-for="(item, index) in listBlockHome"
         :key="index"
@@ -30,50 +30,36 @@
             Tất cả
           </nuxt-link>
         </div>
-        <vue-slick-carousel
-          v-bind="settings"
-          class="my-2"
-        >
-          <div
-            v-for="(it, ind) in item.items"
-            :key="ind"
-          >
-            <thumb-comic
-              :comic="it"
-            />
+        <div class="w-full hide-scrollbar overflow-x-auto my-2">
+          <div class="w-max">
+            <div
+              v-for="(it, ind) in item.items"
+              :key="ind"
+              class="inline-block mr-4"
+            >
+              <thumb-comic
+                :comic="it"
+              />
+            </div>
           </div>
-        </vue-slick-carousel>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel';
 import SvgIcon from '~/components/common/items/SvgIcon';
 import ThumbComic from '~/components/mobile/comics/ThumbComic';
-
-import 'vue-slick-carousel/dist/vue-slick-carousel.css';
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 
 export default {
   name: "ContentHome",
   components: {
     SvgIcon,
     ThumbComic,
-    VueSlickCarousel,
   },
   data() {
     return {
-      settings: {
-        arrows: false,
-        dots: false,
-        lazyLoad: 'ondemand',
-        autoplay: false,
-        slidesToShow: 2.4,
-        infinite: false,
-        centerPadding: '20px',
-      },
       listMenuHome: [
         {
           title: 'Danh mục',

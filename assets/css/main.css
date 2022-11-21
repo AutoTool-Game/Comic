@@ -184,6 +184,10 @@ body {
   font-weight: 500;
 }
 
+.tabs-link .nuxt-link-active .tab-link {
+  color: rgba(241, 241, 241, 1);
+}
+
 .tab-active.tab-link {
   color: rgba(241, 241, 241, 1);
 }
@@ -195,3 +199,15 @@ body {
   font-weight: 500;
 }
 
+.tab-btn-cate {
+  border: 1px solid #333333;
+  background-color: #333333;
+  color: #999999;
+}
+
+.tab-btn-cate.tab-link-active {
+  background-color: #332B21;
+  border: 1px solid #FFB340;
+  color: #FFB340;
+  font-weight: 400;
+}

@@ -68,6 +68,7 @@ export default {
   auth: {
     plugins: [
       '~/plugins/mixins.js',
+      '~/plugins/components.js',
     ]
   }
 }
