@@ -26,23 +26,23 @@
               {{ it.name }}
             </nuxt-link>
           </div>
-          <div class="my-2 flex">
-            <svg-icon
-              name="icon-view"
-            />
-            <span class="text-white">
+        </div>
+      </div>
+      <div class="my-2 flex">
+        <svg-icon
+          name="icon-view"
+        />
+        <span class="text-white">
               &nbsp; {{ commaSeparateNumber(comic.count_read) }}
             </span>
-          </div>
-          <div class="my-2 flex">
-            <svg-icon
-              name="icon-eye"
-            />
-            <span class="text-white">
+      </div>
+      <div class="my-2 flex">
+        <svg-icon
+          name="icon-eye"
+        />
+        <span class="text-white">
               &nbsp; {{ commaSeparateNumber(comic.count_view) }}
             </span>
-          </div>
-        </div>
       </div>
     </div>
     <div class="z-10 grid-center absolute top-0 left-0">

@@ -187,6 +187,18 @@ body {
   color: rgba(241, 241, 241, 1);
 }
 
+.header-main-library .tab-link {
+  color: #F1F1F1;
+  opacity: 0.3;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tab-library.tab-active .tab-link {
+  color: #FFB340;
+  opacity: 1;
+}
+
 .tab-active.tab-link {
   color: rgba(241, 241, 241, 1);
 }
