@@ -1,6 +1,9 @@
 <template>
   <div class="fixed-header-category">
-    <div class="header-category py-2 px-3">
+    <div
+      class="header-category py-2 px-3"
+      :class="heightCate"
+    >
       <div class="header-top-category flex justify-between">
         <nuxt-link
           class="w-1/5"
@@ -12,7 +15,7 @@
           />
         </nuxt-link>
         <div class="w-3/5 font-medium text-lg text-white text-center">
-          Thiếu nhi
+          {{ title }}
         </div>
         <div class="header-right-category flex justify-end w-1/5 text-center items-center">
           <nuxt-link
@@ -33,7 +36,10 @@
           </nuxt-link>
         </div>
       </div>
-      <div class="header-main-category py-4 w-full hide-scrollbar overflow-x-auto">
+      <div
+        v-if="showListCate === true"
+        class="header-main-category py-4 w-full hide-scrollbar overflow-x-auto"
+      >
         <div class="w-max h-full">
           <div
             v-for="(item, index) in listCate"
@@ -72,6 +78,20 @@ export default {
   name: "HeaderCategory",
   components: {
     SvgIcon,
+  },
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    showListCate: {
+      type: Boolean,
+      default: true,
+    },
+    heightCate: {
+      type: String,
+      default: 'h-[100px]'
+    }
   },
   data() {
     return {

@@ -1,20 +1,20 @@
 <template>
   <div>
     <header-category
-      title="Thiếu nhi"
-      show-list-cate="1"
-      height-cate="h-[100px]"
+      title="Bảng xếp hạng"
+      :show-list-cate=false
+      height-cate="h-[70px]"
     />
-    <main-category />
+    <main-chart />
   </div>
 </template>
 
 <script>
 export default {
-  name: "CategoryPage",
+  name: "ChartPage",
   components: {
     HeaderCategory: () => import('@/components/mobile/headers/HeaderCategory'),
-    MainCategory: () => import('@/components/mobile/categories/MainCategory'),
+    MainChart: () => import('@/components/mobile/charts/MainChart'),
   }
 }
 </script>

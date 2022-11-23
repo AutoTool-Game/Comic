@@ -6,7 +6,8 @@
     <img
       :src="comic.thumb"
        alt=""
-      class="w-[132px] rounded-xl"
+      class="rounded-xl"
+      :class="classParent"
     >
   </nuxt-link>
 </template>
@@ -18,6 +19,10 @@ export default {
     comic: {
       type: Object,
       required: true,
+    },
+    classParent: {
+      type: String,
+      default: 'w-[132px]'
     }
   }
 }
