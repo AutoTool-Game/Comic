@@ -38,6 +38,11 @@ export const comicMixin = {
 
       document.body.classList.remove('show-menu-tab-content-type');
       document.body.classList.remove('show-menu-tab-ranking-type');
+    },
+    toggleCheckbox(e)
+    {
+      console.log(1);
+      // e.classList.toggle('input-checkbox-active');
     }
   }
 }

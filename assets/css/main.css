@@ -288,3 +288,15 @@ body {
 .border-1-b-333333 {
    border-bottom: 1px solid #333333;
 }
+
+.input-checkbox {
+  width: 24px;
+  height: 24px;
+  background-image: url(/svgs/icon-checkbox.svg);
+}
+
+.input-checkbox-active {
+  width: 24px;
+  height: 24px;
+  background-image: url(/svgs/icon-checkbox-chose.svg) !important;
+}
