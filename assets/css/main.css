@@ -300,3 +300,19 @@ body {
   height: 24px;
   background-image: url(/svgs/icon-checkbox-chose.svg) !important;
 }
+
+.icon-delete-content-library {
+  width: 24px;
+  height: 24px;
+  background-image: url(/svgs/inactive-icon-delete.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-delete-content-library-active {
+  width: 24px;
+  height: 24px;
+  background-image: url(/svgs/active-icon-delete.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}

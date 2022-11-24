@@ -39,10 +39,14 @@ export const comicMixin = {
       document.body.classList.remove('show-menu-tab-content-type');
       document.body.classList.remove('show-menu-tab-ranking-type');
     },
-    toggleCheckbox(e)
+    toggleCheckbox(id)
     {
-      console.log(1);
-      // e.classList.toggle('input-checkbox-active');
+      const checkActiveDelete = document.getElementById('icon-delete');
+      const element = document.querySelector('[data-id="' + id +'"]');
+      element.classList.toggle('input-checkbox-active');
+      if (checkActiveDelete.classList.contains('icon-delete-content-library')) {
+        checkActiveDelete.classList.add('icon-delete-content-library-active');
+      }
     }
   }
 }

@@ -87,7 +87,7 @@ export default {
           ]
         },
         {
-          id: 1508,
+          id: 1507,
           name: "Nhím con vui vẻ - Pupi tốt bụng",
           slug: "nhim-con-vui-ve-pupi-tot-bung",
           count_like: 1,
@@ -149,7 +149,7 @@ export default {
           ]
         },
         {
-          id: 1508,
+          id: 1506,
           name: "Nhím con vui vẻ - Pupi tốt bụng",
           slug: "nhim-con-vui-ve-pupi-tot-bung",
           count_like: 1,
@@ -211,7 +211,7 @@ export default {
           ]
         },
         {
-          id: 1508,
+          id: 1505,
           name: "Nhím con vui vẻ - Pupi tốt bụng",
           slug: "nhim-con-vui-ve-pupi-tot-bung",
           count_like: 1,
@@ -273,7 +273,7 @@ export default {
           ]
         },
         {
-          id: 1508,
+          id: 1504,
           name: "Nhím con vui vẻ - Pupi tốt bụng",
           slug: "nhim-con-vui-ve-pupi-tot-bung",
           count_like: 1,

@@ -1,7 +1,7 @@
 <template>
   <div class="my-3 flex justify-between">
     <div class="1/10 text-center">
-      <div class="input-checkbox" :data-id="comic.id" @click="toggleCheckbox()"></div>
+      <div class="input-checkbox" :data-id="comic.id" @click="toggleCheckbox(comic.id)"></div>
     </div>
     <div class="w-3/10 text-center">
       <thumb-comic

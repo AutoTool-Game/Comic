@@ -9,10 +9,7 @@
           {{ title }}
         </div>
         <div class="header-right-category flex justify-end w-1/5 text-center items-center">
-          <svg-icon
-            name="unactive-icon-delete"
-            class="w-[24px] mx-2"
-          />
+          <div id="icon-delete" class="icon-delete-content-library"></div>
           <nuxt-link
             to="/library"
           >

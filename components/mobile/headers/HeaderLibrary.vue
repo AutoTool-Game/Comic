@@ -27,7 +27,7 @@
             />
           </nuxt-link>
           <nuxt-link
-            to="/search"
+            to="/library/edit"
           >
             <svg-icon
               name="icon-edit"
