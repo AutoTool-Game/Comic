@@ -1,9 +1,19 @@
 <template>
-  <div>Trang tìm kiếm</div>
+  <component
+    :is="nameComponent"
+  />
 </template>
 
 <script>
+import pageMixin from '~/mixins/pageMixin'
+
 export default {
-  name: "index"
+  components: {
+    DesktopComponent: () => import('@/components/desktop/pages/SearchPage'),
+    MobileComponent: () => import('@/components/mobile/pages/SearchPage')
+  },
+  mixins: [
+    pageMixin
+  ],
 }
 </script>
