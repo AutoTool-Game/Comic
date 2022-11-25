@@ -20,8 +20,8 @@
             <div class="w-full hide-scrollbar overflow-x-auto py-4">
               <div class="w-max">
                 <div
-                  v-for="(item, index) in listComic"
-                  :key="index"
+                  v-for="(item, ind) in listComic"
+                  :key="ind"
                   class="inline-block mr-4"
                 >
                   <div class="relative">
@@ -45,6 +45,23 @@
             </div>
           </div>
         </div>
+        <div class="mt-4">
+          <div class="px-3">
+            <span class="text-[#F1F1F1] text-lg">
+              Nên đọc
+            </span>
+          </div>
+          <div class="px-3">
+            <div
+              v-for="(it, id) in listComic"
+              :key="id"
+            >
+              <suggest-comic
+                :comic="it"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -53,11 +70,13 @@
 <script>
 import SvgIcon from "~/components/common/items/SvgIcon";
 import ThumbComic from '~/components/mobile/comics/ThumbComic';
+import SuggestComic from '~/components/mobile/comics/SuggestComic';
 export default {
   name: "SearchMain",
   components: {
     SvgIcon,
     ThumbComic,
+    SuggestComic
   },
   data () {
     return {

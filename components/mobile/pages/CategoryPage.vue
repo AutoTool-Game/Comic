@@ -2,7 +2,6 @@
   <div>
     <header-category
       title="Thiếu nhi"
-      show-list-cate="1"
       height-cate="h-[100px]"
     />
     <main-category />

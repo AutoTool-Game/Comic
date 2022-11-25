@@ -183,6 +183,13 @@ body {
   font-weight: 500;
 }
 
+.tabs-link.tab-active {
+  text-decoration: none;
+  color: rgba(241, 241, 241, 1);
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .tabs-link .nuxt-link-active .tab-link {
   color: rgba(241, 241, 241, 1);
 }
@@ -201,13 +208,6 @@ body {
 
 .tab-active.tab-link {
   color: rgba(241, 241, 241, 1);
-}
-
-.tabs-link {
-  text-decoration: none;
-  color: rgba(241, 241, 241, 0.3);
-  font-size: 14px;
-  font-weight: 500;
 }
 
 .tab-btn-cate {
