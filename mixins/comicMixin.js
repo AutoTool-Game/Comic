@@ -1,3 +1,5 @@
+import { createSlug } from '~/helpers/common'
+
 export const comicMixin = {
   methods: {
     commaSeparateNumber(val) {
@@ -47,6 +49,46 @@ export const comicMixin = {
       if (checkActiveDelete.classList.contains('icon-delete-content-library')) {
         checkActiveDelete.classList.add('icon-delete-content-library-active');
       }
+    },
+    onShareComic (item) {
+      const slug = createSlug(`${item.name}-${item.id}`)
+      const link = `${process.env.BASE_URL}/comic/${slug}`
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${link}`, '_blank')
+    },
+    viewMoreNoJQuery (container, type) {
+      const parent = document.querySelector(container);
+      const maxCharsDetail = 200;
+      const ellipsisDetail = '...';
+
+      if (parent) {
+        const htmlFullText = document.querySelector(container + ' .collapse-full-content').textContent;
+        if (htmlFullText)
+        {
+          if (htmlFullText.length < maxCharsDetail) {
+            type = 1;
+          }
+          let shortHtmlText = htmlFullText;
+          if (type !== 1) {
+            parent.classList.add('short');
+            shortHtmlText = htmlFullText.substring(0, maxCharsDetail - 3) + ellipsisDetail;
+            document.querySelector(container + ' .collapse-short-content').textContent = shortHtmlText;
+          } else {
+            parent.classList.remove('short');
+            document.querySelector(container + ' .collapse-short-content').textContent = '';
+          }
+        }
+      }
+    },
+    fancyTimeFormat(duration)
+    {
+      const h = Math.floor(duration / 3600).toString().padStart(2,'0');
+      const m = Math.floor(duration % 3600 / 60).toString().padStart(2,'0');
+      const s = Math.floor(duration % 60).toString().padStart(2,'0');
+
+      if (h === '00'){
+        return m + ':' + s;
+      }
+      return h + ':' + m + ':' + s;
     }
   }
 }
