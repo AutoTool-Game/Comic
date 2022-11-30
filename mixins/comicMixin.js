@@ -40,6 +40,7 @@ export const comicMixin = {
 
       document.body.classList.remove('show-menu-tab-content-type');
       document.body.classList.remove('show-menu-tab-ranking-type');
+      document.getElementById('list-chapter').classList.remove('show');
     },
     toggleCheckbox(id)
     {
@@ -79,8 +80,7 @@ export const comicMixin = {
         }
       }
     },
-    fancyTimeFormat(duration)
-    {
+    fancyTimeFormat(duration) {
       const h = Math.floor(duration / 3600).toString().padStart(2,'0');
       const m = Math.floor(duration % 3600 / 60).toString().padStart(2,'0');
       const s = Math.floor(duration % 60).toString().padStart(2,'0');
@@ -89,6 +89,6 @@ export const comicMixin = {
         return m + ':' + s;
       }
       return h + ':' + m + ':' + s;
-    }
+    },
   }
 }

@@ -395,3 +395,107 @@ body {
 .translate-middle {
   transform: translate(-50%,-50%);
 }
+
+#header-reader.fixed-menu {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  z-index: 31;
+  -webkit-animation: mySticky 1.2s;
+  -moz-animation: mySticky 1.2s;
+  animation: mySticky 1.2s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  padding-bottom: 1rem!important;
+  padding-top: 1rem!important;
+}
+
+.list-image-preview {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#header-reader {
+  transition: all 300ms ease-in-out;
+  padding: 0 15px;
+}
+
+.header-reader {
+  background-color: #1C1C1E;
+}
+
+.header-reader.fixed-menu.header-sticky-hide {
+  transform: translateY(-100%);
+}
+
+.player-reader {
+  transition: all 300ms ease-in-out;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  bottom: 60px;
+  display: inline-flex;
+  background-image: none;
+  background-color: #1C1C1E;
+  color: #f1f1f1;
+}
+
+.muc-luc-cat {
+  transition: all 300ms ease-in-out;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: inline-flex;
+  background-image: none;
+  background-color: #1C1C1E;
+  color: #F1F1F1;
+}
+
+.player-reader.hide-player {
+  transform: translateY(200%);
+}
+
+.muc-luc-cat.hide-player {
+  transform: translateY(200%);
+}
+
+.list-chapter {
+  transition: all 300ms ease-in-out;
+  width: 100%;
+  position: fixed;
+  bottom: -100%;
+  background-color: #1C1C1E;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: justify;
+  z-index: 100;
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+}
+
+.show-index-cat .list-chapter {
+  transform: none;
+  -webkit-transform: none;
+}
+
+.list-chapter.show {
+  bottom: 0;
+}
+
+.list-chapter #load-more-list-read {
+  overflow: scroll;
+  height: calc(50vh - 122px);
+  padding-top: 10px;
+}
+
+.text-FFB340 {
+  color: #FFB340;
+}
+
+html {
+  scroll-behavior: smooth;
+}
