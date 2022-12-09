@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full fixed top-0 left-0 z-2 p-2">
+  <div class="w-full fixed top-0 left-0 z-50 p-2">
     <div class="flex justify-around">
-      <div class="w-1/6">
+      <div class="w-2-10">
         <nuxt-link
           to="/"
         >
@@ -11,10 +11,10 @@
           />
         </nuxt-link>
       </div>
-      <div class="w-3/6 text-[#F1F1F1] text-center">
+      <div class="w-6-10 text-lg text-[#F1F1F1] text-center">
         Truyện kiểu mới
       </div>
-      <div class="w-2/6 flex justify-around">
+      <div class="w-2-10 flex justify-around">
         <nuxt-link
           to="/search"
         >

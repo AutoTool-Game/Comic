@@ -1,4 +1,5 @@
 import { createSlug } from '~/helpers/common'
+import Plyr from "plyr";
 
 export const comicMixin = {
   methods: {
@@ -90,5 +91,44 @@ export const comicMixin = {
       }
       return h + ':' + m + ':' + s;
     },
+    setupPlyr() {
+      const controls = `
+        <button type="button" class="update-listen-time plyr__control plyr__control--overlaid" data-plyr="play">
+          <div class="icon--pressed btn-pressed" role="presentation">
+            <img src="/images/btn-pause.png" alt="">
+          </div>
+          <div class="icon--not-pressed btn-not-pressed" role="presentation">
+            <img src="/images/btn-play.png" alt="">
+          </div>
+        </button>
+        <div class="plyr__controls mx-3 hidden">
+          <div class="plyr__time plyr__time--current text-FFB340" aria-label="Current time">00:00</div>
+          <div class="plyr__progress mx-2">
+            <input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Seek">
+            <progress class="plyr__progress__buffer px-2" max="100" value="0">% buffered</progress>
+            <span role="tooltip" class="plyr__tooltip">00:00</span>
+          </div>
+          <div class="plyr__time plyr__time--duration text-FFB340" aria-label="Duration">00:00</div>
+        </div>
+        <div class="background-overlay"></div>
+        <div class="background-overlay-header"></div>
+    `;
+      // const instances =
+      Plyr.setup('.player', {controls});
+
+      document.querySelector('.plyr--is-touch').addEventListener('click', () => {
+        if (document.querySelector('.plyr__control--overlaid').classList.contains('plyr__control--pressed')) {
+          document.querySelector('.plyr__control--overlaid').setAttribute('style', 'opacity: unset; visibility: unset;');
+          // document.querySelector('.video-info').setAttribute('style', 'top: 80vh !important;');
+          setTimeout(() => {
+            document.querySelector('.plyr__control--overlaid').removeAttribute('style');
+            // document.querySelector('.video-info').setAttribute('style', 'display: none !important;');
+          }, 3000);
+        }
+        else {
+          // document.querySelector('.video-info').setAttribute('style', 'display: none !important;');
+        }
+      });
+    }
   }
 }

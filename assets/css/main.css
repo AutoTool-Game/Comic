@@ -499,3 +499,77 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.w-1-10 {
+  width: 10%;
+}
+
+.w-2-10 {
+  width: 20%;
+}
+
+.w-3-10 {
+  width: 30%;
+}
+
+.w-4-10 {
+  width: 40%;
+}
+
+.w-5-10 {
+  width: 50%;
+}
+
+.w-6-10 {
+  width: 60%;
+}
+
+.w-7-10 {
+  width: 70%;
+}
+
+.w-8-10 {
+  width: 80%;
+}
+
+.w-9-10 {
+  width: 90%;
+}
+
+:root {
+  --plyr-color-main: linear-gradient(286.17deg, #FF9F0A 0%, #FFCD22 100%);
+  --plyr-range-fill-background: #FFB340;
+  --plyr-video-range-track-background: rgba(255, 255, 255, 0.3);
+  --plyr-range-track-height: 2px;
+  --plyr-video-control-background-hover: transparent;
+  --plyr-video-range-thumb-active-shadow-color: #FFB340;
+}
+.plyr--video .plyr__controls {
+  background: unset !important;
+  bottom: 135px !important;
+}
+.icon--not-pressed > use,
+.icon--pressed > use,
+.plyr__control.plyr__control--overlaid > svg > use{
+  color: #FFB340;
+}
+.plyr__controls__item.plyr__time--duration.plyr__time,
+.plyr__controls__item.plyr__time--current.plyr__time {
+  color: #FFB340;
+  font-weight: 600;
+}
+
+.plyr__controls__item.plyr__time--duration.plyr__time {
+  display: block;
+}
+.plyr--full-ui input[type=range] {
+  width: 100%;
+}
+.plyr__controls .plyr__progress {
+  flex: 1;
+  min-width: 0;
+}
+
+.plyr__control--overlaid {
+  z-index: 3;
+}
