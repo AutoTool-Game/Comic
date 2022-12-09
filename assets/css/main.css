@@ -129,12 +129,6 @@
   -webkit-transform: translate3d(-320px, 0, 0);
 }
 
-.show-mobile-menu .mobile-menu,
-.show-filter-menu .filter-menu {
-  transform: none;
-  -webkit-transform: none;
-}
-
 .btn-login {
   background: linear-gradient(286.17deg, #FF9F0A 0%, #FFCD22 100%);
   padding: 7px 20px;
@@ -284,7 +278,9 @@ body {
 .show-menu-tab-content-type .menu-tab-content-type,
 .show-filter-menu-tab-content-type .filter-menu-tab-content-type,
 .show-menu-tab-ranking-type .menu-tab-ranking-type,
-.show-filter-menu-tab-ranking-type .filter-menu-tab-ranking-type {
+.show-filter-menu-tab-ranking-type .filter-menu-tab-ranking-type,
+.show-mobile-menu .mobile-menu,
+.show-filter-menu .filter-menu {
   transform: none;
   -webkit-transform: none;
 }

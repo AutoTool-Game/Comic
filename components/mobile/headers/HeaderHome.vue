@@ -1,6 +1,40 @@
 <template>
   <div id="fixed-header-home" class="fixed-header">
-    <mobile-menu />
+    <div class="header-overlay"></div>
+    <div
+      id="filter-overlay"
+      class="filter-overlay"
+      @click="closeFilterOverlay()"
+    ></div>
+    <div class="mobile-menu">
+      <div class="user-login my-5">
+        <div class="login-button-menu flex">
+          <button class="btn-login mx-auto">Đăng nhập</button>
+        </div>
+        <div class="main-menu my-5">
+          <nuxt-link
+            v-for="(item, index) in mobile_menu"
+            :key="index"
+            :to="item[1]"
+            :class="item[0]"
+          >
+            <div class="w-1/4">
+              <svg-icon
+                :name="item[2]"
+                class="mx-auto"
+              />
+            </div>
+            <span class="w-1/2 text-base" v-text="item[3]"></span>
+            <div class="w-1/4">
+              <svg-icon
+                :name="item[4]"
+                class="mx-auto"
+              />
+            </div>
+          </nuxt-link>
+        </div>
+      </div>
+    </div>
     <div id="header-bg" class="header-bg w-full" :style="headerBg"></div>
     <div class="header py-2 px-3">
       <div class="header-top flex justify-between mb-3">
@@ -68,7 +102,6 @@
 
 import VueSlickCarousel from 'vue-slick-carousel';
 import SvgIcon from '~/components/common/items/SvgIcon';
-import MobileMenu from '~/components/mobile/layouts/MobileMenu';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 
@@ -77,7 +110,6 @@ export default {
   components: {
     SvgIcon,
     VueSlickCarousel,
-    MobileMenu
   },
   data() {
     return {
@@ -99,6 +131,43 @@ export default {
         `${process.env.BASE_URL}/banners/banner-default-4.jpg`,
       ],
       headerBg: '',
+      mobile_menu: [
+        [
+          'text-[#FFB340] flex justify-between py-3',
+          '/',
+          'icon-home-active',
+          'Trang chủ',
+          'icon-more-active',
+        ],
+        [
+          'text-white flex justify-between py-3',
+          '/',
+          'icon-audio-comic',
+          'Truyện kiểu mới',
+          'icon-more',
+        ],
+        [
+          'text-white flex justify-between py-3',
+          '/',
+          'icon-tu-sach',
+          'Tủ truyện',
+          'icon-more',
+        ],
+        [
+          'text-white flex justify-between py-3',
+          '/',
+          'icon-setting',
+          'Cài đặt App',
+          'icon-more',
+        ],
+        [
+          'text-white flex justify-between py-3',
+          '/',
+          'icon-logout',
+          'Đăng xuất',
+          '',
+        ],
+      ],
     }
   },
   mounted () {
@@ -108,7 +177,15 @@ export default {
     swipeSlick(slider) {
       this.headerBg = 'background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%), url("' + this.listSlick[slider] + '");';
     },
-    showMainMenuLeft() {}
+    showMainMenuLeft() {
+      document.body.classList.add('show-mobile-menu');
+      document.getElementById('filter-overlay').style = 'display: block';
+    },
+    closeFilterOverlay()
+    {
+      document.getElementById('filter-overlay').style = 'display: none';
+      document.body.classList.remove('show-mobile-menu');
+    },
   },
 }
 </script>

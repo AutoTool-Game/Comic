@@ -258,7 +258,12 @@ export default {
         this.canScroll = 1;
       }, 2000);
       this.showPlayer();
-    }
+    },
+    closeFilterOverlay()
+    {
+      document.getElementById('filter-overlay').style = 'display: none';
+      document.getElementById('list-chapter').classList.remove('show');
+    },
   }
 }
 </script>

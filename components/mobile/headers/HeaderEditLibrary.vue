@@ -9,7 +9,7 @@
           {{ title }}
         </div>
         <div class="header-right-category flex justify-end w-1/5 text-center items-center">
-          <div id="icon-delete" class="icon-delete-content-library"></div>
+          <button id="icon-delete" class="icon-delete-content-library px-2"></button>
           <nuxt-link
             to="/library"
           >

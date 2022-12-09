@@ -1,5 +1,5 @@
-import { createSlug } from '~/helpers/common'
 import Plyr from "plyr";
+import { createSlug } from '~/helpers/common'
 
 export const comicMixin = {
   methods: {
@@ -26,22 +26,6 @@ export const comicMixin = {
 
       // return result with - sign if negative
       return sign < 0 ? '-' + num : num;
-    },
-    showMainMenuContentType() {
-      document.body.classList.add('show-menu-tab-content-type');
-      document.getElementById('filter-overlay').style = 'display: block';
-    },
-    showMainMenuRankingType() {
-      document.body.classList.add('show-menu-tab-ranking-type');
-      document.getElementById('filter-overlay').style = 'display: block';
-    },
-    closeFilterOverlay()
-    {
-      document.getElementById('filter-overlay').style = 'display: none';
-
-      document.body.classList.remove('show-menu-tab-content-type');
-      document.body.classList.remove('show-menu-tab-ranking-type');
-      document.getElementById('list-chapter').classList.remove('show');
     },
     toggleCheckbox(id)
     {

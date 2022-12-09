@@ -381,6 +381,20 @@ export default {
   mounted() {
   },
   methods: {
+    showMainMenuContentType() {
+      document.body.classList.add('show-menu-tab-content-type');
+      document.getElementById('filter-overlay').style = 'display: block';
+    },
+    showMainMenuRankingType() {
+      document.body.classList.add('show-menu-tab-ranking-type');
+      document.getElementById('filter-overlay').style = 'display: block';
+    },
+    closeFilterOverlay()
+    {
+      document.getElementById('filter-overlay').style = 'display: none';
+      document.body.classList.remove('show-menu-tab-content-type');
+      document.body.classList.remove('show-menu-tab-ranking-type');
+    },
   },
 }
 </script>
