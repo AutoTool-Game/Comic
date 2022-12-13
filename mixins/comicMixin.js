@@ -1,5 +1,7 @@
+import { mapActions } from 'vuex'
 import Plyr from "plyr";
 import { createSlug } from '~/helpers/common'
+import { authTypes } from '~/configs/common'
 
 export const comicMixin = {
   methods: {
@@ -113,6 +115,15 @@ export const comicMixin = {
           // document.querySelector('.video-info').setAttribute('style', 'display: none !important;');
         }
       });
-    }
+    },
+    ...mapActions('dialog', {
+      changePropertiesDialog: 'changePropertiesDialog'
+    }),
+    showDialogAuthLogin (type = authTypes.LOGIN) {
+      this.changePropertiesDialog({
+        isShowDialogAuth: true,
+        authType: authTypes.LOGIN
+      })
+    },
   }
 }

@@ -9,7 +9,12 @@
     <div class="mobile-menu">
       <div class="user-login my-5">
         <div class="login-button-menu flex">
-          <button class="btn-login mx-auto">Đăng nhập</button>
+          <button
+            class="btn-login mx-auto"
+            @click="showDialog()"
+          >
+            Đăng nhập
+          </button>
         </div>
         <div class="main-menu my-5">
           <nuxt-link
@@ -100,7 +105,9 @@
 
 <script>
 
+import { mapActions } from 'vuex'
 import VueSlickCarousel from 'vue-slick-carousel';
+import { comicMixin } from "~/mixins/comicMixin";
 import SvgIcon from '~/components/common/items/SvgIcon';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
@@ -111,6 +118,7 @@ export default {
     SvgIcon,
     VueSlickCarousel,
   },
+  mixins: [comicMixin],
   data() {
     return {
       settings: {
@@ -186,6 +194,14 @@ export default {
       document.getElementById('filter-overlay').style = 'display: none';
       document.body.classList.remove('show-mobile-menu');
     },
+    ...mapActions('dialog', {
+      toggleSidebar: 'toggleSidebar'
+    }),
+    showDialog()
+    {
+      this.closeFilterOverlay();
+      this.showDialogAuthLogin();
+    }
   },
 }
 </script>

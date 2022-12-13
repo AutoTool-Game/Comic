@@ -3,3 +3,48 @@ export const routeNames = {
   SEARCH: 'search',
   SEARCH_RESULT: 'search/result'
 }
+
+export const dialogTypes = {
+  REQUIRE_VIP_COMMON: 'REQUIRE_VIP_COMMON',
+  FEATURE_VIP: 'FEATURE_VIP',
+  FEATURE_ACCOUNT_VIP: 'FEATURE_ACCOUNT_VIP',
+  REPORT_ERROR_CONTENT: 'REPORT_ERROR_CONTENT',
+  REQUIRE_BUY_CONTENT: 'REQUIRE_BUY_CONTENT',
+  REQUIRE_LOGIN: 'REQUIRE_LOGIN',
+  REPORT_ERROR_FILE: 'REPORT_ERROR_FILE',
+  DIALOG_ERROR_COMMON: 'DIALOG_ERROR_COMMON',
+  NONE: 'NONE'
+}
+
+export const nameDialogType = {
+  REQUIRE_VIP_COMMON: 'RequireVipCommon',
+  FEATURE_VIP: 'FeatureVip',
+  FEATURE_ACCOUNT_VIP: 'FeatureAccountVip',
+  REPORT_ERROR_CONTENT: 'ReportErrorContent',
+  REQUIRE_BUY_CONTENT: 'RequireBuyContent',
+  REQUIRE_LOGIN: 'RequireLogin',
+  REPORT_ERROR_FILE: 'ReportErrorFile',
+  DIALOG_ERROR_COMMON: 'DialogErrorCommon'
+}
+
+export const authTypeName = {
+  LOGIN: 'AuthLogin',
+  REGISTER: 'AuthRegister',
+  FORGOT_PASSWORD: 'AuthForgotPassword',
+  AUTH_NO_VERIFY: 'AuthNoVerify',
+  CHANGE_PASSWORD_SUCCESS: 'AuthChangePasswordSuccess',
+  CHANGE_EMAIL_SUCCESS: 'AuthChangeEmailSuccess',
+  CHANGE_PHONE_SUCCESS: 'AuthChangePhoneSuccess',
+  SESSION_EXPIRED: 'AuthSessionExpired'
+}
+
+export const authTypes = {
+  LOGIN: 'LOGIN',
+  REGISTER: 'REGISTER',
+  FORGOT_PASSWORD: 'FORGOT_PASSWORD',
+  AUTH_NO_VERIFY: 'AUTH_NO_VERIFY',
+  CHANGE_PASSWORD_SUCCESS: 'CHANGE_PASSWORD_SUCCESS',
+  CHANGE_EMAIL_SUCCESS: 'CHANGE_EMAIL_SUCCESS',
+  CHANGE_PHONE_SUCCESS: 'CHANGE_PHONE_SUCCESS',
+  SESSION_EXPIRED: 'SESSION_EXPIRED'
+}

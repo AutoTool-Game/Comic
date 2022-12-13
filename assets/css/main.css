@@ -569,3 +569,62 @@ html {
 .plyr__control--overlaid {
   z-index: 3;
 }
+
+.dialog-auth {
+  width: calc(100vw - 4rem) !important;
+  max-width: 500px !important;
+  background: #1C1C1E !important;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .1) !important;
+  border-radius: 16px !important;
+  position: relative !important;
+}
+
+.dialog-auth .el-dialog__header {
+  padding: 30px!important;
+}
+
+.dialog-auth .el-dialog__body {
+  padding: 0 20px 30px!important;
+}
+
+.container-input-auth {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 9999px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+}
+
+.border-all-neutral-aaa {
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(170 170 170 / var(--tw-border-opacity));
+}
+
+.input-auth {
+  height: 100%;
+  width: 100%;
+  border-style: none;
+  background-image: none;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  margin-left: 5px;
+}
+
+input.input-auth:focus {
+  outline: none;
+}
+
+.submit-login, .submit-register, .submit-forget-pass {
+  background: linear-gradient(286.17deg, #FF9F0A 0%, #FFCD22 100%);
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #1C1C1E;
+}
