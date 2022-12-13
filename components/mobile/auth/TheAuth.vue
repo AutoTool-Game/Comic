@@ -45,6 +45,7 @@ export default {
   components: {
     AuthLogin: () => import('~/components/mobile/auth/AuthLogin'),
     AuthRegister: () => import('~/components/mobile/auth/AuthRegister'),
+    AuthForgotPassword: () => import('~/components/mobile/auth/AuthForgotPassword'),
     SvgIcon
   },
   mixins: [comicMixin],
